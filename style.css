@@ -1,32 +1,118 @@
-/* Простой сброс стилей */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: sans-serif; background-color: #fdf6f0; color: #333; }
+/* Подключаем красивый шрифт из Google Fonts (он загрузится автоматически) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-header { background: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-header h1 { color: #d2691e; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: #fff9f5; /* Нежный кремовый фон */
+    color: #4a3b32; /* Темно-коричневый текст вместо черного */
+    line-height: 1.6;
+}
+
+/* Шапка сайта */
+header { 
+    background: #ffffff; 
+    padding: 20px 40px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Легкая тень */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 { 
+    color: #e67e22; /* Оранжевый цвет */
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #7f8c8d;
+    margin-left: 20px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e67e22; /* При наведении становятся оранжевыми */
+}
+
+/* Главный заголовок раздела */
+main h2 {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 32px;
+    color: #d35400;
+}
 
 /* Сетка для карточек */
 .cake-grid {
     display: grid;
-    /* На больших экранах 3 колонки, на телефонах — 1 */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto; /* Центрируем сетку на больших экранах */
 }
 
+/* Карточка торта */
 .cake-card {
     background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Легкая тень */
+    border-radius: 15px;
+    padding: 20px;
     text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Мягкая объемная тень */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Эффект при наведении на карточку (она приподнимается) */
+.cake-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
 }
 
 .cake-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover; /* Чтобы картинки не растягивались */
-    border-radius: 8px;
+    height: 250px;
+    object-fit: cover; /* Картинка заполняет блок, не искажаясь */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #f0f0f0; /* Серый фон, пока картинка грузится */
 }
 
-.price { font-weight: bold; color: #d2691e; display: block; margin-top: 10px; }
+.cake-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.cake-card p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.price { 
+    font-weight: 700; 
+    color: #e67e22; 
+    font-size: 22px;
+    display: block; 
+}
+
+/* Подвал */
+footer {
+    background: #fff;
+    text-align: center;
+    padding: 30px;
+    margin-top: auto;
+    border-top: 1px solid #eee;
+    color: #7f8c8d;
+}
